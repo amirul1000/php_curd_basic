@@ -1,5 +1,8 @@
-"# php_curd_basic" 
+"# php_curd_basic"
+
+
 I am going to discuss some basic tutorial in php and mysql
+
 We will discuss here about
 
 1. Variable in PHP
