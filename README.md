@@ -1,7 +1,7 @@
 "# php_curd_basic" 
 
 
-Youtube Tutorial :https://www.youtube.com/watch?v=2jefKUs8ugQ&list=PLbQWwHG4S0snaWv5rPDfbl3d9f0gecPw-&index=2
+Youtube Tutorial : https://www.youtube.com/watch?v=2jefKUs8ugQ
 
 
-Donate to Paypal patabuz@gmail.com
+Donate to Paypal : patabuz@gmail.com
