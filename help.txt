@@ -1,0 +1,135 @@
+
+I am going to discuss some basic tutorial in php and mysql
+We will discuss here about 
+1.Varibale in php
+    How to declare
+    Array data in variable 
+
+2.function in php
+3.include file to the main file     
+4.Submitting a form with client side
+data to the server to process with the data 
+5.Looping for foreah while do while
+6.How to manage files and will do add,edit&delete with mysql table
+
+after this tutorial you can write a php project yourself 
+
+
+PHP any varibale will start with $ sign
+$a_var = "Hello world";
+
+$arr = new array();
+
+////////////content//////////////
+////////////content//////////////
+		 ////mysql datbase connection
+	$servername = "localhost";
+	$username = "root";
+	$password = "secret";
+	$db = "test";
+	
+	// Create connection
+	$conn = new mysqli($servername, $username, $password,$db);
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$sql = "INSERT INTO `member` (`username`, `password`, `description`) VALUES ('abc', 'www', 'eeee');";
+	$result = $conn->query($sql);
+	
+	$sql = "SELECT * FROM member";
+	$result = $conn->query($sql);
+	
+	if ($result->num_rows > 0) {
+		// output data of each row
+		$i=-1;
+		while($row = $result->fetch_assoc()) {
+			$i++;
+			$arr[$i]['username'] = $row["username"];
+			$arr[$i]['description'] = $row["description"];
+		}
+	} else {
+		echo "0 results";
+	}
+	$conn->close();
+	///////////////////////////////			
+    print_r($arr);
+
+
+
+$arinfo = array();
+			$i = 0;
+			while($data = mysql_fetch_assoc($this->result)) {
+				while(list($key,$value) = each($data))
+					$arinfo[$i][$key] = $value;
+				$i++;
+			}
+
+
+
+<form action="test.php">
+    <input type="text" name="username" >
+    <input type="password" name="password" >
+    <textarea name="description"></textarea>
+    <input type="hidden" name="cmd">
+    <input type="submit" name="sub_btn" value="Submit">
+</form>
+
+<?php
+	 ////mysql datbase connection
+	$servername = "localhost";
+	$username = "root";
+	$password = "secret";
+	$db = "test";
+	
+	// Create connection
+	$conn = new mysqli($servername, $username, $password,$db);
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$sql = "SELECT * FROM member";
+	$result = $conn->query($sql);
+	
+	if ($result->num_rows > 0) {
+		// output data of each row
+		$i=-1;
+		while($row = $result->fetch_assoc()) {
+			$i++;
+			$arr[$i]['username'] = $row["username"];
+			$arr[$i]['description'] = $row["description"];
+		}
+	} else {
+		echo "0 results";
+	}
+	$conn->close();
+	
+	print_r($arr);
+	///////////////////////////////	
+?>
+<table>
+    <tr>
+       <td>username</td>
+       <td>description</td>
+    </tr>
+    <?php
+	 for($i=0;$i<count($arr);$i++)
+	 {
+	?>
+    <td> 
+      <td><?=$arr[$i]['username']?></td>
+       <td><?=$arr[$i]['description']?></td>
+    </tr>
+    <?php
+	 }
+   ?>	 
+</table>
+
+<form action="test.php" method="post">
+   First name<input type="text" name="first_name" value=""><br>
+   Last name<input type="text" name="last_name" value=""><br>
+   Address<input type="text" name="address	" value=""><br>
+   <input type="submit" value="Submit">
+</form>
