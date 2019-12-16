@@ -3,8 +3,8 @@ I am going to discuss some basic tutorial in php and mysql
 We will discuss here about
 
 1. Variable in PHP
-    How to declare
- Array data in a variable 
+How to declare
+Array data in a variable 
 
 2.Function in PHP
 3.Include file to the main file     
